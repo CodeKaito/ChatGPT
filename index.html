@@ -10,15 +10,19 @@
   </head>
   <body>
     <main>
-        <div>
+        <div class="header">
             <h1 class="header__title">ChatGPT3</h1>
+        </div>
+        <div class="chatbox"> 
             <form action="">
                 <input type="text" name="message" id="message">
                 <button type="submit">Send</button>
             </form>
-            <div id="chat-log">
+            <div class="chatlog" id="chat-log">
             </div>
         </div>
+            
+        
     </main>
 	<script>
         let messages = []
