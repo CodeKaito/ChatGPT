@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+}
+
+main {
+    background-color: #343541;
+    height: 100rem;
+    color: white;
+}
+
+.header__title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
