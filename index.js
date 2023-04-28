@@ -1,11 +1,14 @@
+import * as dotenv from 'dotenv'
 import { Configuration, OpenAIApi } from "openai";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 
+dotenv.config()
+
 const configuration = new Configuration({
-    organization: OPEN_AI_API_ORGANIZATION,
-    apiKey: OPEN_AI_API_KEY,
+    organization: process.env.OPEN_AI_API_ORGANIZATION,
+    apiKey: process.env.OPEN_AI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);

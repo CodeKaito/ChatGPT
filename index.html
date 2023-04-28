@@ -9,29 +9,41 @@
     <link rel="icon" href="./assets/favicon.ico" type="icon">
   </head>
   <body>
-    <main>
-        <div class="h-full">
-            <div id="nav" class="-10 mb-10">
-                <h1 class="text-5xl text-center font-bold">ChatGPT3</h1>
+    <div class="app">
+        <main>
+            <div>
+                <h1>Your AI</h1>
             </div>
-            
-        </div>
-        <div class="chatbox"> 
-            <form action="">
-                <input type="text" name="message" id="message">
-                <button type="submit">Send</button>
-            </form>
-            <div class="chatlog" id="chat-log">
+            <div class="app">
+                <div id="#chat_container">
+                    <div class="wrapper">
+                        <div class="chat">
+                        </div>
+                    </div>
+                </div>
+
+                <form action="">
+                    <textarea type="text" name="message" id="message" rows="1" cols="1" placeholder="Send a message"></textarea>
+                    <button type="submit"><img src="assets/send.svg" alt=""></button>
+                </form>
+                </div>
             </div>
-        </div>
+                
             
-        
-    </main>
+        </main>
+    </div>
 	<script>
         let messages = []
-        const chatLog = document.getElementById('chat-log');
+        const chatLog = document.getElementById('#chat_container');
         const message = document.getElementById('message');
         const form = document.querySelector('form');
+
+        window.onload = function() {
+            window.scrollTo(0,document.body.scrollHeight);
+        };
+
+        window.onload()
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const messageText = message.value;
