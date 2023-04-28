@@ -19,12 +19,16 @@
         </div>
     </main>
 	<script>
+        let messages = []
         const chatLog = document.getElementById('chat-log');
         const message = document.getElementById('message');
         const form = document.querySelector('form');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const messageText = message.value;
+            const newMessage = 
+            {"role": "user", "content":`${messageText}`}
+            messages.push(newMessage)
             message.value= '';
             const messageElement = document.createElement('div');
             messageElement.classList.add('message');
@@ -39,11 +43,13 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        message: messageText
+                        messages
                     })
                 })
                 .then(res => res.json())
                 .then(data => {
+                    let newAssistMessage = {"role": "assistant", "content":`${data.completion.content}`}
+                    messages.push(newAssistMessage)
                     const messageElement = document.createElement('div');
                     messageElement.classList.add('message');
                     messageElement.classList.add('message--received');
